@@ -1,0 +1,76 @@
+\input{files/impostazioni}
+\bibliography{Bibliografia}
+
+
+% Formattazione Figure -----------------------------------------------------------
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{3}
+\def\topfraction{1}
+\def\textfraction{0}
+% Fuzz ---------------------------------------------------------------------------
+%\hfuzz10cm %Non scassare linee che escono dal bordo
+% Frontespizio -------------------------------------------------------------------
+       \title{Data-driven Birdstrike Risk Estimation}
+       \author{Alessandro Minervini}
+       \titolocorso{Ingegneria Informatica}
+       \chair{Prof. Andrew D. Bagdanov}
+       \othermembers{Prof. Fabio Schoen}
+       \numberofmembers{2} %numero dei relatori
+       
+       \degreeyear{2018/19}
+       \numerocorrelatori{1} %numero dei correlatori
+       \correlatori{Ing. Walter Nunziati} % i correlatori separati da \\
+
+%
+% ---- Inclusioni (vedi piu` sotto per il comando "include" --------------
+%\includeonly {introduzione,chapter1, chapter2}
+%\includeonly {chapter1, chapter2, chapter3, chapter4, chapter5, chapter6}
+%\includeonly{chapter6}
+%
+
+
+\begin{document}
+
+\frontmatter
+
+%\hyphenation{}
+%
+\pagestyle{headings} % rende attive le impostazioni sulla testata!
+%
+\maketitle % crea il frontespizio (ricordati di copiare "stemma.eps" nella tua 
+%%directory)
+%
+%
+
+\pagenumbering{roman}
+\include{files/abstract}
+\include{files/abstract2}
+\include{files/Acknowledgements}
+\tableofcontents % inserisce indice generale
+\cleardoublepage
+%\addcontentsline{toc}{chapter}{Elenco delle figure}
+%\listoffigures   % inserisce indice figure
+%\addcontentsline{toc}{chapter}{Elenco delle tabelle}
+%\listoftables    % inserisce indice tabelle
+%\addcontentsline{toc}{chapter}{Elenco degli algoritmi}
+%\listofalgorithms
+%
+%--------------- Inizio del testo vero e proprio
+%
+
+%\cleardoublepage
+%\pagenumbering{arabic}
+\include{files/ringraziamenti}
+
+\mainmatter
+\include{files/Ch.1}
+\include{files/Ch.2}
+\include{files/Ch.3}
+\include{files/Ch.4}
+\include{files/Ch.5}
+\include{files/Ch.6}
+\addcontentsline{toc}{chapter}{Appendix}
+\include{files/Appendix}
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+\end{document}
