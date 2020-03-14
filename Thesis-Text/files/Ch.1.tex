@@ -1,0 +1,43 @@
+\chapter{Introduction}\label{ch:Ch.1}
+
+Wildlife strike generally means the violent impact between an aircraft and one or more wild animals, mainly birds (birdstrike), with more or less relevant consequences, depending on the size and number of animals impacted, the flight phase and the part of the aircraft that is hit.
+Bird strikes occur most frequently during take-off or landing (about 90\% of cases) and on low-altitude flights. However, cases of impact with birds have also occurred at higher elevations, such as 6 000 or 9 000 meters above sea level \cite{wikipedia_it}.
+
+The damage caused is considerable. Since 1910 there have been 350 military deaths and 250 civilian deaths due to impact with birds and moreover the wildlife strike is constantly increasing all over the world \cite{wikipedia_it}. This is mainly due to the progressive increase in air traffic, the mandatory reporting and the higher attention to the problem.
+
+Some relevant cases have happened. Just a year ago on August 15, 2019, Ural Airlines Flight 178 from Moscow–Zhukovsky to Simferopol, Crimea, suffered a bird strike after taking off from Zhukovsky and crash landed in a cornfield 5 kilometers from the airport. About 70 persons were injured, all with minor injuries.
+On January 4, 2009, a Sikorsky S-76 helicopter hit a red-tailed hawk in Louisiana. The hawk hit the helicopter just above the windscreen. The impact caused an engine power loss and eight of the nine people on board died in the subsequent crash. The survivor, a passenger, was seriously injured.
+On November 10, 2008, Ryanair Flight 4102 from Frankfurt to Rome made an emergency landing at Ciampino Airport after multiple birdstrikes caused both engines to fail. After touchdown, the left main landing gear collapsed, and the aircraft briefly veered off the runway. Passengers and crew were evacuated through emergency exits \cite{wikipedia_en}.
+In addition to this, only civil aviation in the United States spends almost one billion dollars a year on the wildlife strike, while in Italy it is estimated at a cost of 40 million euros / year, including repairs and delays \cite{ENAC-Wildlifestrike}.
+For these reasons is important to have a risk-index to prevent, with the best possible accuracy, the wildlife strike events.
+The problem doesn’t have an easy solution. The fauna behavior isn’t trivially predictable and over time the removal techniques lose effectiveness. Moreover, airports are attractive places for birds and other animals.
+
+In Italy ENAC (Italian Civil Aviation Authority) has adopted the Birdstrike Risk Index version 2.0 ($BRI_2$) \cite{soldatini2011wildlife}. $BRI_2$ was developed in collaboration with the Department of Environmental Sciences, Informatics and Statistics of the Ca 'Foscari University of Venice, in order to provide a standardized, unique index that allows to measure the risk of wildlife strikes within each airport.
+This index is based on
+\begin{itemize}
+\item the average abundances of wildlife species present at the  airport;
+\item the number of impacts by species;
+\item and the effect on flight (EOF) from the impacts and air traffic
+\end{itemize}
+to determine the wildlife strike-risk of airports.
+$BRI_2$ index-risk for an airport is on a scale of values ranging from 0 to 2, they can be computed monthly and yearly and 0.5 is the threshold value chosen by ENAC. If the risk index is bigger than this threshold value the airport operates to mitigate the wildlife risk with actions of fauna removal. These actions are managed by the airport Bird Control Unit (BCU) whose task is prevention and inspection. 
+
+In this thesis we have performed an in-depth analysis of $BRI_2$ in order to understand its advantages and disadvantages as a predictive index of actual birdstrike risk. Our analysis, performed using historical data collected from multiple Italian airports, indicate that the $BRI_2$ index is \emph{not} a reliable predictor of risk and we propose a data-driven approach as an alternative. We learn a recurrent, airport-specific model from historical data that predicts future birdstrike risk on the basis of a fifteen-day window of data. We validate our approach on sample data from eight Italian airports, and our experiments demonstrate the superior predictive quality of our model with respect to $BRI_2$.   
+Given the large amount of data available from many Italian airports, we decided to use Machine Learning techniques to develop the data-driven model for the birdstrike risk estimation.
+
+\section{Thesis Outline}
+
+This thesis is organized as follows.
+
+\begin{itemize}
+    \item \textit{Chapter \ref{ch:Ch.2}} discusses the related works, including an introduction to the $BRI_2$ and talks about some basic knowledge of Machines and Deep Learning, in particular Recurrent neural networks and Siamese neural networks.
+    \item \textit{Chapter \ref{ch:Ch.3}} introduces the $BRI_2$ formula and all the variables involved in it.
+    Then the analysis is reported to understand its behavior, the possible limitations and the correlation between the index and the wildlife strike events.
+    \item \textit{Chapter \ref{ch:Ch.4}} presents the proposed model. At first the used dataset and the pre-processing techniques are introduced. After that the network architecture and the designed custom loss function are introduced.
+    \item \textit{Chapter \ref{ch:Ch.5}} shows the experiments and results achieved and compare in detail the proposed model respect to the $BRI_2$.
+    \item \textit{Chapter \ref{ch:Ch.6}} discusses the goals achieved, their importance and the possible future directions.
+\end{itemize}
+
+
+
+

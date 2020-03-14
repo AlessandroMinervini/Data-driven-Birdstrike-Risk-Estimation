@@ -1,0 +1,40 @@
+\chapter{Conclusions}\label{ch:Ch.6}
+In the previous chapter the results obtained in the tests performed for each airport analysed were shown. This chapter discusses the goals and improvements achieved by the proposed model by comparing the new risk-index with $BRI_2$. 
+Finally, some possible future directions will be proposed for the improvement of the implemented model.
+
+\section{Goals and improvements achieved}
+Birdstrike events are a growing phenomenon due to the increase in flights over the years. It is very important to prevent these events for the safety of passengers but also to reduce repair costs and losses caused by delays.
+
+The main goal of this work has been to generate a risk index able to detect high-risk periods in order to prevent these events. 
+This type of task is not trivial, it is closely related to the biology, habits and seasonality of the species that populate a specific airport.
+
+A model that solves this task must know this information as variables and solve a time series forecasting the problem.
+Especially the implemented model must have a high correlation with the birdstrike events that historically occurred to evaluate it's goodness and higher than the one shown by $BRI_2$.
+The results shown in \textit{Chapter \ref{ch:Ch.5}} are very encouraging.
+A very good correlation value with birdstrike events has been achieved for a subset of selected airports and the model is able to identify the most dangerous periods and a reliable predictor of risk.
+
+Another important achievement of the new index is to provide a daily risk value, in particular for the day after the observation window. The current risk index, $BRI_2$, provides the monthly danger value but calculated at the end of the month.
+So the model implemented on a daily basis offers a tool that can be better to prevent birdstrike events in a timely manner and optimize prevention costs.
+
+In addition to the monthly basis of $BRI_2$, the analysis done reveals other important limitations:
+
+\begin{itemize}
+    \item $BRI_2$ tends to be more insensitive to sightings over the years and how this is reflected in the calculated value.
+    \item Creates a ranking of the most dangerous species by counting birdstrike events over the years and keeping their memory.
+    
+    This means that sightings can be influenced by birdstrike events that occurred many years before and that the risk value is more dependent on the historical rank of the species rather than how many elements were sighted at that time.
+    \item The poor correlation of $BRI_2$ with historical bridstrike events, even some airports have revealed correlations with a negative value. 
+\end{itemize}
+
+
+The model developed in this work is not affected by these problems and is proposed as a reliable predictor of risk showing a strong correlation with birdstrike events. 
+Finally, the range of risk values between 0 and 1 make the index more interpretable than the $BRI_2$.
+
+
+\section{Future directions}
+The achievements of this work and the encouraging results suggest some possible future developments and directions that can be explored.
+Extending the subset of airports on which to test the model could be a first step in continuing the analysis started by this thesis' work.
+Adding the number of flights per day as a feature to the model could also increase accuracy. At the moment this has not been possible because only the number of flights per month is reported in the available database. Entering an average of daily flights (i.e. future based data) could have incorrectly altered the model's performance. 
+
+Other possible future developments could bring small changes to the implemented model pipeline or different untested architectures with the aim of increasing performance.
+Finally, it would be interesting to try to train the model with data of several airports at the same time, choosing airports with similar characteristics e.g. type of species sighted, number of flights and geographical area.

@@ -1,0 +1,120 @@
+\chapter*{Appendix}
+\markboth{Appendix}{Appendix}
+\markright{Appendix}
+
+\section*{Wildlife Strike Risk Index}
+In this thesis work a further model proposed by BirdControl Italy S.r.l. has been implemented.
+This model, the Wildlife Strike Risk Index ($WRI$), has been proposed to replace the current $BRI_2$ with the purpose of:
+
+\begin{itemize}
+    \item Simplicity and clarity of calculation
+    \item Objectivity and standardization
+    \item Independence from daily monitoring of fauna
+    \item Definition of an objective attention threshold
+\end{itemize}
+The $WRI$ has been defined on the basis of the following 5 components:
+
+\begin{itemize}
+    \item $C1$. Ratio between the Wildlife Strike ($WS$) events and number of movements
+    \item $C2$. Species involved in wildlife strikes 
+    \item $C3$. No. Individuals involved for $WS$
+    \item $C4$. Effect on flight and affected part of the aircraft
+    \item $C5$. Efficiency monitoring strategy
+\end{itemize}
+Calculated the 5 components, you can estimate the $WRI$ with the following formula in equation \ref{WRI_Formula} :
+
+\begin{equation}\label{WRI_Formula}
+WRI= \frac{\sum_{i=1}^5 C_{i}}{100}
+\end{equation}
+
+\subsubsection{C1}
+
+This component is a measure of risk frequency, and is calculated by comparing the number of wildlife strike events with the number of movements ($mov$) within the airport during the month.
+An airport that records 20 or more $WS$ for every 1000 movements (2\% or more) is assigned a maximum value of 25 (this ensures that the $WRI$ takes a maximum value of 1), therefore:
+
+\begin{equation}\label{to_c1_1}
+20 : 1000 = 25 : X \\
+\end{equation}
+\begin{equation}\label{to_c1_2}
+X = (1000 \cdot 25)/20 = 1250
+\end{equation}
+Finally, given the equations \ref{to_c1_1} and \ref{to_c1_2}, $C1$ is computed with the following formula in equation \ref{C1}:
+
+\begin{equation}\label{C1}
+C1 = \frac{\frac{\mathrm{WS}}{\mathrm{month}*1250}}{\mathrm{mov}/\mathrm{month}}
+\end{equation}
+
+\subsubsection{C2}
+This component is a measure of the severity of the risk, and is calculated on the basis of a heuristic matrix \cite{allan2006heuristic}, associating a value between 1 and 25 to the species involved in each event.
+
+\subsubsection{C3}
+This component is a measure of the severity of the risk, and is calculated by associating a value (from 1 to 5) depending on the number of individuals involved in a wildlife strike event, shown in the Table \ref{tab-c3}.
+
+\begin{table}
+	\centering
+	\scalebox{1}{
+	\begin{tabular}{@{}ccc@{}}
+		\toprule
+		Number of Animals Involved & Severity of the Risk \\	\midrule
+		1 & 1 \\
+		From 2 to 10 & 2 \\
+		From 11 to 100 & 3\\
+		$>$ 100 &  5 \\	\bottomrule
+	\end{tabular}}
+	\caption{$C3$: measure of the severity of the risk. The table lists in ascending order the hazard values attributed to the number of animals involved in wildlife strike events.}
+	\label{tab-c3}
+\end{table}
+
+\subsubsection{C4}
+This component is a measure of the severity of the risk whose values range from 4.3 to 30 depending on the severity of the $EOF$.
+In particular, in case the aircraft is hit and/or damaged the $C4$ value is doubled and in case of a catastrophic event, the $WRI$ value related to that event shall be set to the default value1.
+The Table \ref{tab-EOF_wri} show the $EOF$ values:
+
+\subsubsection{C5}
+
+This component is a measure of risk frequency, and is calculated based on the number of unscheduled wildlife strike inspections ($UI$) at the individual airport.
+An airport that records 60 or more $UI$ per month has a maximum value of 15 (this ensures that the $WRI$ is at a maximum value of 1), therefore:
+
+\begin{equation}\label{to_c5_1}
+60 : 15 = \mathrm{UI} : X
+\end{equation}
+\begin{equation}\label{to_c5_2}
+ X = \frac{15 \cdot \mathrm{UI}}{60}
+\end{equation}
+Finally, given the equations \ref{to_c5_1} and \ref{to_c5_2}, $C5$ is computed with the following formula in equation \ref{C5}:
+
+\begin{equation}\label{C5}
+C5 = \frac{\mathrm{UI} \cdot 15}{60}
+\end{equation}
+
+\begin{table}
+	\centering
+	\scalebox{1}{
+	\begin{tabular}{@{}ccc@{}}
+		\toprule
+		EOF Value & Description \\	\midrule
+		4.3 & None \\
+		5 & Aborted take-off, delay \\
+		6 & Precautionary landing \\
+		7.5 &  Engine(s) shutdown \\
+		10 & Forced landing \\	
+		15 & Visual obstruction \\	
+		- & Catastrofic effect \\	\bottomrule
+	\end{tabular}}
+	\caption{Categories of the Effect On Flight ($EOF$) provoked by wildlife strike events. The table lists in ascending order the values attributed to damage caused by wildlife events.}
+	\label{tab-EOF_wri}
+\end{table}
+
+By summing up the scores for the five variables presented, the $WRI$ is obtained (eq. \ref{WRI_Formula}). The value is divided by 100, resulting in a value between 0 and 1.
+The weighted arithmetic mean of the events recorded in a month gives the monthly $WRI$.
+Similarly, the weighted arithmetic mean of the events recorded in a year gives the annual $WRI$.
+
+This model was developed and tested on a subset of airports.
+Two main problems were detected:
+\begin{itemize}
+    \item the first problem is the poor correlation of the $WRI$ with historical birdstrike events,
+    \item the second problem is the low risk values that the $WRI$ provides over many years of computing, failing to report the real periods of danger.
+\end{itemize}
+From a first analysis the $WRI$ is not an accurate risk index and a reliable risk predictor, having in common the poor correlation with birdstrike events as the $BRI_2$ showed. 
+
+

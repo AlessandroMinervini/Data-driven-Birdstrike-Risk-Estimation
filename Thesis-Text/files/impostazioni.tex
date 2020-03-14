@@ -1,0 +1,86 @@
+\documentclass[12pt,a4paper,oneside,openright]{Tptesi2}
+%\documentclass[a4paper,oneside]{Tptesi2}
+
+ % needed for \Set
+
+\usepackage[american]{babel}
+
+\usepackage{amsmath,amssymb}
+\DeclareMathOperator*{\argmin}{argmin} 
+
+\usepackage{acronym}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}  
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{subfigure}
+\usepackage{framed}
+\usepackage{rotating}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {img/} }
+\usepackage{wrapfig}
+\usepackage{matlab-prettifier}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\setlist{nosep}
+%\usepackage{pdf14}
+\usepackage[font=small]{caption}
+\usepackage{booktabs}
+
+
+\acrodef{BS}{base station}
+\acrodef{DL}{downlink}
+\acrodef{DTX}{discontinuous transmission}
+\acrodef{EC}{energy consumption}
+\acrodef{EE}{energy efficiency}
+\acrodef{ICT}{information and communication technology}
+\acrodef{ML}{machine learning}
+\acrodef{OPEX}{operational expenditure}
+\acrodef{PA}{power amplifier}
+\acrodef{PAR}{peak-to-average ratio}
+\acrodef{QoS}{quality-of-service}
+\acrodef{RB}{resource block}
+\acrodef{RE}{resource element}
+\acrodef{RL}{reinforcement learning}
+\acrodef{SM}{sleep mode}
+\acrodef{TD}{temporal difference}
+\acrodef{UE}{user equipment}
+\acrodef{UL}{uplink}
+
+
+
+\interfootnotelinepenalty=10000 % prevent footnotes from going into an other page.
+
+\usepackage[hyperref=true,
+url=false,
+isbn=false,
+style=numeric-comp,
+citereset=chapter,
+maxcitenames=3,
+maxbibnames=100,
+block=none]{biblatex}
+
+% Use a small font for the verbatim environment
+
+\makeatletter  % makes '@' an ordinary character
+\renewcommand{\verbatim@font}{%
+	\ttfamily\footnotesize\catcode`\<=\active\catcode`\>=\active%
+}
+
+\makeatother   % makes '@' a special symbol again
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\hypersetup{%
+	pdfstartview= {XYZ null null 1.00},%
+	plainpages=false,%
+	breaklinks,%
+	pdftitle={Effective sleep mode management by means of reinforcement learning for LTE cellular networks},%
+	pdfauthor={Daniele Giacomelli},%
+	pdfsubject={Tesi Magistrale},%
+	pdfkeywords={Base Station, Machine Learning, Reinforcement Learning, Energy Efficiency, SARSA algorithm, Green Network},%
+	colorlinks=false}
